@@ -1,0 +1,637 @@
+/* 
+  Sawsan Abdulbari - Accessible Portfolio
+  CSS with focus on accessibility, readability, and responsive design
+*/
+
+/* CSS Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Root variables for consistent theming and easy maintenance */
+:root {
+  /* Color scheme with WCAG AAA contrast ratios */
+  --primary-color: #1a237e;
+  --secondary-color: #0d47a1;
+  --accent-color: #ff6f00;
+  --text-primary: #000000; /* Maximum contrast for primary text */
+  --text-secondary: #000000; /* Maximum contrast for secondary text */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --border-color: #e0e0e0;
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+  --focus-color: #1976d2;
+  --focus-outline: 3px solid var(--focus-color);
+  
+  /* Typography scale for better readability */
+  --font-base: 1rem;
+  --font-small: 0.875rem;
+  --font-large: 1.125rem;
+  --font-h1: 2.5rem;
+  --font-h2: 2rem;
+  --font-h3: 1.5rem;
+  
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+  
+  /* Line height for readability */
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+}
+
+/* Base typography for optimal readability */
+html {
+  font-size: 100%; /* Respects user font size preferences */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-base);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip to main content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Container for consistent layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Header styles with accessibility focus */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--space-lg) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Navigation with ARIA support */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+nav a:hover, nav a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+nav a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Main content area */
+main {
+  padding: var(--space-xl) 0;
+  min-height: calc(100vh - 200px);
+}
+
+/* Headings with proper hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-heading);
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-h2);
+  margin-top: var(--space-xl);
+}
+
+h3 {
+  font-size: var(--font-h3);
+  margin-top: var(--space-lg);
+}
+
+/* Paragraph spacing for readability */
+p {
+  margin-bottom: var(--space-md);
+  max-width: 70ch; /* Optimal line length for reading */
+}
+
+/* Links with clear focus states */
+a {
+  color: #ba5100; /* High contrast color for WCAG AA compliance */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #8a3c00;
+  text-decoration-thickness: 2px;
+}
+
+a:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Buttons with accessible states */
+button, .button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-base);
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  min-height: 44px; /* Touch target size */
+  min-width: 44px;
+}
+
+button:hover, .button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+button:focus, .button:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+button:active, .button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form styles with accessibility */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 var(--space-sm);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: var(--font-base);
+  font-family: inherit;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* Error states for forms */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: var(--font-small);
+  margin-top: var(--space-xs);
+  display: none;
+}
+
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+  border-color: var(--error-color);
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+/* Success states */
+.success-message {
+  background-color: #e8f5e9;
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  padding: var(--space-md);
+  border-radius: 4px;
+  margin-bottom: var(--space-lg);
+}
+
+/* Cards for content sections */
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Grid layout for responsive design */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* Image accessibility */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+figure {
+  margin: 0 0 var(--space-lg) 0;
+}
+
+figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--font-small);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Tables with accessibility */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-lg);
+}
+
+table caption {
+  font-weight: bold;
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+th, td {
+  padding: var(--space-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-secondary);
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-xxl);
+  border-top: 1px solid var(--border-color);
+  color: #000000; /* High contrast black text for all footer content */
+}
+
+/* Ensure all footer text has maximum contrast */
+footer p {
+  color: #000000 !important; /* Force high contrast for copyright and shortcuts */
+}
+
+footer strong {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+/* Footer links already have high contrast from global link styles */
+
+/* Ensure text-center in footer maintains high contrast */
+footer .text-center {
+  color: #000000 !important;
+}
+
+footer .text-center p {
+  color: #000000 !important;
+}
+
+footer .text-center strong {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+/* Force maximum contrast for all footer text elements */
+footer p,
+footer .text-center p,
+footer div p,
+footer span,
+footer strong {
+  color: #000000 !important;
+}
+
+/* Ensure copyright text has maximum contrast */
+footer p:first-child,
+footer .text-center p:first-child {
+  color: #000000 !important;
+}
+
+/* Force keyboard shortcuts text to black */
+footer p:last-child,
+footer .text-center p:last-child,
+footer strong {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+/* Ultimate catch-all for all footer text */
+footer *:not(a) {
+  color: #000000 !important;
+}
+
+/* Ensure footer has maximum contrast background */
+footer {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000080;
+    --border-color: #000;
+    --focus-color: #0000ff;
+  }
+  
+  button, .button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f5f5f5;
+    --text-secondary: #e0e0e0;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --border-color: #424242;
+  }
+  
+  .card {
+    background-color: var(--bg-secondary);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  :root {
+    --font-h1: 2rem;
+    --font-h2: 1.5rem;
+    --font-h3: 1.25rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  nav a {
+    display: block;
+    text-align: center;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print styles */
+@media print {
+  header, footer, nav {
+    display: none;
+  }
+  
+  main {
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Animations for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0,0,0,.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid white;
+  padding: var(--space-sm);
+  cursor: pointer;
+  margin-bottom: var(--space-sm);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  nav.mobile-open {
+    display: block;
+  }
+  
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Help text styling */
+.help-text {
+  font-size: var(--font-small);
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+  display: block;
+}

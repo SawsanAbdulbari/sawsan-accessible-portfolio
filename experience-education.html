@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sawsan Abdulbari's professional experience and educational background in Data Science and Machine Learning">
+    <meta name="author" content="Sawsan Abdulbari">
+    
+    <title>Experience & Education - Sawsan Abdulbari | Data Scientist Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    
+    <style>
+        /* Additional styles for timeline and charts */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-chart {
+            margin: 2rem 0;
+        }
+        
+        .skill-bar {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+        
+        .skill-progress {
+            height: 24px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: width 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            padding-right: 0.5rem;
+            justify-content: flex-end;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .skill-progress-bar,
+            .gallery-item {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills-projects.html">Skills & Projects</a></li>
+                    <li><a href="experience-education.html" aria-current="page">Experience & Education</a></li>
+                    <li><a href="accessibility.html">Accessibility Statement</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+            <h1>Experience & Education</h1>
+            
+            <!-- Professional Experience Section -->
+            <section aria-labelledby="experience-heading">
+                <h2 id="experience-heading">Professional Experience</h2>
+                
+                <div class="timeline" role="list" aria-label="Work experience timeline">
+                    <div class="timeline-item" role="listitem">
+                        <div class="timeline-date">
+                            <time datetime="2023-01">January 2023 - Present</time>
+                        </div>
+                        <div class="card">
+                            <h3>Junior Machine Learning Engineer</h3>
+                            <p><strong>Company:</strong> Omdena</p>
+                            <p><strong>Location:</strong> Remote (Global)</p>
+                            <p>
+                                Collaborating with international professionals to develop AI solutions for social good. 
+                                Leading projects that leverage machine learning to address real-world challenges in 
+                                healthcare, education, and sustainability.
+                            </p>
+                            <ul>
+                                <li>Developed COVID-19 prediction models with 92% accuracy</li>
+                                <li>Built chatbots using LLM for automated customer support</li>
+                                <li>Implemented ML pipelines for production deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" role="listitem">
+                        <div class="timeline-date">
+                            <time datetime="2022-03">March 2022 - December 2022</time>
+                        </div>
+                        <div class="card">
+                            <h3>Lead ML Engineer & Data Scientist</h3>
+                            <p><strong>Company:</strong> Raqameyyah</p>
+                            <p><strong>Location:</strong> Remote</p>
+                            <p>
+                                Led the development of automated ML pipelines and interactive dashboards for 
+                                e-commerce analytics. Specialized in order management systems and predictive analytics.
+                            </p>
+                            <ul>
+                                <li>Reduced order cancellation rates by 25% through predictive modeling</li>
+                                <li>Developed real-time analytics dashboards using Python and Plotly</li>
+                                <li>Fine-tuned SLMs for order validation processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" role="listitem">
+                        <div class="timeline-date">
+                            <time datetime="2015-01">2015 - 2022</time>
+                        </div>
+                        <div class="card">
+                            <h3>Founder & CEO</h3>
+                            <p><strong>Company:</strong> Plastic Recycling Business</p>
+                            <p><strong>Location:</strong> Yemen</p>
+                            <p>
+                                Founded and operated a successful plastic recycling business for 7 years, 
+                                contributing to environmental sustainability while developing strong business 
+                                and leadership skills.
+                            </p>
+                            <ul>
+                                <li>Managed end-to-end business operations</li>
+                                <li>Implemented sustainable recycling processes</li>
+                                <li>Built partnerships with local communities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Skills Proficiency Chart -->
+            <section aria-labelledby="skills-chart-heading" class="mt-lg">
+                <h2 id="skills-chart-heading">Technical Proficiency</h2>
+                
+                <div class="card">
+                    <p>Visual representation of my technical skill levels based on years of experience and project complexity.</p>
+                    
+                    <div class="skills-chart" role="img" aria-label="Skills proficiency chart">
+                        <div class="skill-bar">
+                            <span class="skill-name">Python & Data Science</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 95%" role="progressbar" 
+                                     aria-label="Python & Data Science proficiency: 95 percent"
+                                     aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    95%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <span class="skill-name">Machine Learning & AI</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 90%" role="progressbar" 
+                                     aria-label="Machine Learning & AI proficiency: 90 percent"
+                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    90%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <span class="skill-name">Cloud & DevOps</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 85%" role="progressbar" 
+                                     aria-label="Cloud & DevOps proficiency: 85 percent"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    85%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <span class="skill-name">Data Visualization</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 88%" role="progressbar" 
+                                     aria-label="Data Visualization proficiency: 88 percent"
+                                     aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                                    88%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <span class="skill-name">Security & Infrastructure</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 75%" role="progressbar" 
+                                     aria-label="Security & Infrastructure proficiency: 75 percent"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    75%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Education Section -->
+            <section aria-labelledby="education-heading" class="mt-lg">
+                <h2 id="education-heading">Education & Certifications</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Self-Taught Data Science Journey</h3>
+                        <p><strong>Period:</strong> 2020 - Present</p>
+                        <p>
+                            Dedicated self-learner with comprehensive knowledge gained through online courses, 
+                            bootcamps, and hands-on projects. Continuously updating skills through:
+                        </p>
+                        <ul>
+                            <li>Coursera Machine Learning Specializations</li>
+                            <li>Fast.ai Deep Learning Courses</li>
+                            <li>Kaggle Competitions and Notebooks</li>
+                            <li>Open Source Contributions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Professional Certifications</h3>
+                        <ul>
+                            <li><strong>Azure AI Fundamentals</strong> - Microsoft (2023)</li>
+                            <li><strong>Machine Learning Engineering</strong> - Google (2023)</li>
+                            <li><strong>Data Science Professional</strong> - IBM (2022)</li>
+                            <li><strong>Docker Certified Associate</strong> - Docker (2022)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Project Gallery -->
+            <section aria-labelledby="gallery-heading" class="mt-lg">
+                <h2 id="gallery-heading">Project Highlights Gallery</h2>
+                
+                <p>Visual showcase of some of my key projects and achievements.</p>
+                
+                <div class="gallery" role="region" aria-label="Project screenshots gallery">
+                    <figure class="gallery-item">
+                        <img src="images/covid-dashboard.png" 
+                             alt="COVID-19 prediction dashboard showing real-time analytics and trend predictions"
+                             width="400"
+                             height="300"
+                             loading="lazy">
+                        <figcaption>COVID-19 Prediction Dashboard</figcaption>
+                    </figure>
+                    
+                    <figure class="gallery-item">
+                        <img src="images/chatbot-interface.png" 
+                             alt="AI chatbot interface demonstrating natural language processing capabilities"
+                             width="400"
+                             height="300"
+                             loading="lazy">
+                        <figcaption>Intelligent Chatbot Interface</figcaption>
+                    </figure>
+                    
+                    <figure class="gallery-item">
+                        <img src="images/ml-pipeline.png" 
+                             alt="Machine learning pipeline architecture diagram showing data flow and processing stages"
+                             width="400"
+                             height="300"
+                             loading="lazy">
+                        <figcaption>ML Pipeline Architecture</figcaption>
+                    </figure>
+                    
+                    <figure class="gallery-item">
+                        <img src="images/data-visualization.png" 
+                             alt="Interactive data visualization showing business insights and trends"
+                             width="400"
+                             height="300"
+                             loading="lazy">
+                        <figcaption>Business Analytics Dashboard</figcaption>
+                    </figure>
+                </div>
+            </section>
+            
+            <!-- Video Section -->
+            <section aria-labelledby="video-heading" class="mt-lg">
+                <h2 id="video-heading">Featured Presentation</h2>
+                
+                <div class="card">
+                    <h3>Machine Learning in Healthcare - Conference Talk</h3>
+                    <p>
+                        A presentation I gave at the Global AI Summit 2023 about using machine learning 
+                        to improve healthcare outcomes in developing countries.
+                    </p>
+                    
+                    <figure>
+                        <video controls 
+                               width="100%" 
+                               poster="images/video-poster.png"
+                               aria-label="Conference presentation on ML in Healthcare">
+                            <source src="videos/ml-healthcare-talk.mp4" type="video/mp4">
+                            <source src="videos/ml-healthcare-talk.webm" type="video/webm">
+                            <track kind="captions" 
+                                   src="videos/captions-en.vtt" 
+                                   srclang="en" 
+                                   label="English"
+                                   default>
+                            <p>
+                                Your browser doesn't support HTML5 video. 
+                                <a href="videos/ml-healthcare-talk.mp4">Download the video</a> instead.
+                            </p>
+                        </video>
+                        <figcaption>
+                            Presentation at Global AI Summit 2023 discussing ML applications in healthcare
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+            
+            <!-- Achievements Table -->
+            <section aria-labelledby="achievements-heading" class="mt-lg">
+                <h2 id="achievements-heading">Key Achievements</h2>
+                
+                <div class="card">
+                    <table>
+                        <caption>Summary of major achievements and metrics</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Year</th>
+                                <th scope="col">Achievement</th>
+                                <th scope="col">Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023</td>
+                                <td>COVID-19 Prediction Model</td>
+                                <td>92% accuracy, used by 3 healthcare organizations</td>
+                            </tr>
+                            <tr>
+                                <td>2023</td>
+                                <td>AI Chatbot Implementation</td>
+                                <td>60% reduction in response time</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>E-commerce ML Pipeline</td>
+                                <td>25% reduction in order cancellations</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>Kaggle Competition</td>
+                                <td>Top 5% finish in NLP challenge</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="text-center">
+                <p>© 2024 Sawsan Abdulbari. All rights reserved.</p>
+                <p>
+                    <a href="accessibility.html">Accessibility Statement</a>
+                </p>
+                <p>
+                    <strong>Keyboard Shortcuts:</strong> 
+                    Alt+H (Home) | Alt+C (Contact) | Alt+A (Accessibility)
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/accessibility.js"></script>
+    <script>
+        // Animate skill bars when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.skill-progress-bar');
+                    bars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const skillsChart = document.querySelector('.skills-chart');
+        if (skillsChart && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            skillObserver.observe(skillsChart);
+        }
+    </script>
+</body>
+</html>

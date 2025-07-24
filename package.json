@@ -1,0 +1,86 @@
+{
+  "name": "sawsan-accessible-portfolio",
+  "version": "1.0.0",
+  "description": "A fully accessible portfolio website demonstrating WCAG 2.1 Level AA compliance and accessibility best practices",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm run test:accessibility",
+    "test:accessibility": "pa11y-ci --sitemap http://localhost:8000/sitemap.xml",
+    "test:axe": "axe --include=\"main\" --exclude=\"#skip-link\" http://localhost:8000",
+    "test:lighthouse": "lighthouse http://localhost:8000 --only-categories=accessibility --output=html --output-path=./reports/lighthouse-accessibility.html",
+    "test:all": "npm run test:accessibility && npm run test:axe && npm run test:lighthouse",
+    "serve": "http-server . -p 8000 -c-1",
+    "dev": "npm run serve",
+    "build": "echo 'No build process needed for static site' && exit 0",
+    "validate:html": "html-validate *.html",
+    "validate:css": "stylelint css/*.css",
+    "audit": "npm audit",
+    "precommit": "npm run validate:html && npm run test:accessibility"
+  },
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "inclusive-design",
+    "portfolio",
+    "a11y",
+    "semantic-html",
+    "aria",
+    "screen-reader",
+    "keyboard-navigation",
+    "responsive-design"
+  ],
+  "author": {
+    "name": "Sawsan Abdulbari",
+    "email": "sawsan.abdulbari@example.com",
+    "url": "https://github.com/sawsan-accessible-portfolio"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sawsanabdulbari/sawsan-accessible-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sawsanabdulbari/sawsan-accessible-portfolio/issues"
+  },
+  "homepage": "https://sawsanabdulbari.github.io/sawsan-accessible-portfolio/",
+  "devDependencies": {
+    "pa11y-ci": "^3.1.0",
+    "@axe-core/cli": "^4.8.2",
+    "lighthouse": "^11.7.1",
+    "http-server": "^14.1.1",
+    "html-validate": "^8.9.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "accessibility": {
+    "standards": [
+      "WCAG2AA",
+      "Section508"
+    ],
+    "testing": [
+      "automated",
+      "manual",
+      "screen-reader",
+      "keyboard-navigation"
+    ],
+    "tools": [
+      "axe-core",
+      "pa11y",
+      "lighthouse",
+      "wave",
+      "nvda",
+      "jaws",
+      "voiceover"
+    ]
+  }
+}

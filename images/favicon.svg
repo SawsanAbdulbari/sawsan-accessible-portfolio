@@ -1,0 +1,18 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="48" height="48" rx="10" fill="#6366f1"/>
+  
+  <!-- Person Icon (simplified for small size) -->
+  <g transform="translate(24, 20)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="6" fill="white"/>
+    <!-- Body -->
+    <path d="M -9 9 Q -9 4 -4 3 L 4 3 Q 9 4 9 9 L 9 11 Q 9 13 7 13 L -7 13 Q -9 13 -9 11 Z" fill="white"/>
+  </g>
+  
+  <!-- Small plus sign -->
+  <g transform="translate(34, 34)">
+    <rect x="-5" y="-1" width="10" height="2" rx="1" fill="white"/>
+    <rect x="-1" y="-5" width="2" height="10" rx="1" fill="white"/>
+  </g>
+</svg>

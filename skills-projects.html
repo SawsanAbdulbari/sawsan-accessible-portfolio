@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sawsan Abdulbari's technical skills and projects in Data Science, Machine Learning, and AI development">
+    <meta name="author" content="Sawsan Abdulbari">
+    
+    <title>Skills & Projects - Sawsan Abdulbari | Data Scientist Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills-projects.html" aria-current="page">Skills & Projects</a></li>
+                    <li><a href="experience-education.html">Experience & Education</a></li>
+                    <li><a href="accessibility.html">Accessibility Statement</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+            <h1>Skills & Projects</h1>
+            
+            <!-- Technical Skills Section -->
+            <section aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Technical Skills</h2>
+                
+                <!-- Skills Filter Form -->
+                <div class="card">
+                    <h3>Filter Skills by Category</h3>
+                    <form id="skills-filter-form" aria-label="Filter skills">
+                        <fieldset>
+                            <legend>Select skill categories to display</legend>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="skill-category" value="ai-ml" checked>
+                                    AI & Machine Learning
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="skill-category" value="data-science" checked>
+                                    Data Science & Analytics
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="skill-category" value="cloud-devops" checked>
+                                    Cloud & DevOps
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="skill-category" value="security" checked>
+                                    Security & Infrastructure
+                                </label>
+                            </div>
+                        </fieldset>
+                        
+                        <button type="submit">Apply Filter</button>
+                        <button type="reset">Reset All</button>
+                    </form>
+                </div>
+                
+                <!-- Skills Display -->
+                <div id="skills-display" aria-live="polite">
+                    <div class="grid">
+                        <div class="card" data-category="ai-ml">
+                            <h3>AI & Machine Learning</h3>
+                            <ul>
+                                <li><strong>Large Language Models (LLM):</strong> Designed chatbots and tools using prompt engineering</li>
+                                <li><strong>Small Language Models (SLM):</strong> Fine-tuned models for validation and order processing</li>
+                                <li><strong>Machine Learning Algorithms:</strong> Implemented algorithms for prediction and automation</li>
+                                <li><strong>ML Pipeline Development:</strong> Built end-to-end ML pipelines for production</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card" data-category="data-science">
+                            <h3>Data Science & Analytics</h3>
+                            <ul>
+                                <li><strong>Data Mining:</strong> Identified factors contributing to business insights</li>
+                                <li><strong>Data Visualization:</strong> Created visual representations for trend analysis</li>
+                                <li><strong>Python:</strong> Developed ML models and data analysis workflows</li>
+                                <li><strong>Jupyter Notebook:</strong> Documented and shared analytical processes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card" data-category="cloud-devops">
+                            <h3>Cloud & DevOps</h3>
+                            <ul>
+                                <li><strong>Docker:</strong> Containerized applications for consistency across environments</li>
+                                <li><strong>Kubernetes:</strong> Orchestrated and managed containerized applications</li>
+                                <li><strong>Microservices:</strong> Developed features for API orchestration tools</li>
+                                <li><strong>Azure Cloud:</strong> Developed and secured cloud infrastructure</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card" data-category="security">
+                            <h3>Security & Infrastructure</h3>
+                            <ul>
+                                <li><strong>Encryption:</strong> Applied encryption for data protection</li>
+                                <li><strong>SIEM Tools:</strong> Monitored security events with Splunk and Sentinel</li>
+                                <li><strong>Red Team Operations:</strong> Identified and mitigated vulnerabilities</li>
+                                <li><strong>Linux & Windows Server:</strong> Managed diverse server environments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section aria-labelledby="projects-heading" class="mt-lg">
+                <h2 id="projects-heading">Featured Projects</h2>
+                
+                <div class="card">
+                    <h3>COVID-19 Prediction Model</h3>
+                    <p>
+                        Developed a machine learning model to predict COVID-19 trends and outcomes using 
+                        real-world data. The model achieved 92% accuracy and was used to inform public 
+                        health decisions.
+                    </p>
+                    <p><strong>Technologies:</strong> Python, TensorFlow, Pandas, Scikit-learn</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Intelligent Order Management Chatbot</h3>
+                    <p>
+                        Built an AI-powered chatbot using LLM and prompt engineering to provide real-time 
+                        insights about orders, reducing customer service response time by 60%.
+                    </p>
+                    <p><strong>Technologies:</strong> GPT-4, Python, FastAPI, Docker</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Automated ML Pipeline for E-commerce</h3>
+                    <p>
+                        Designed and implemented an end-to-end ML pipeline for order cancellation prediction, 
+                        improving order fulfillment rates by 25%.
+                    </p>
+                    <p><strong>Technologies:</strong> Python, Kubeflow, Azure ML, Kubernetes</p>
+                </div>
+            </section>
+            
+            <!-- Contact Form Section -->
+            <section id="contact-form" aria-labelledby="contact-heading" class="mt-lg">
+                <h2 id="contact-heading">Get in Touch</h2>
+                
+                <div class="card">
+                    <p>
+                        Interested in collaborating on a project or have questions about my work? 
+                        Feel free to reach out using the form below.
+                    </p>
+                    
+                    <form id="contact" aria-label="Contact form">
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            
+                            <div class="form-group">
+                                <label for="name">Full Name <span aria-label="required">*</span></label>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="name-error">
+                                <span class="error-message" id="name-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address <span aria-label="required">*</span></label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="email-error"
+                                       autocomplete="email">
+                                <span class="error-message" id="email-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number (Optional)</label>
+                                <input type="tel" 
+                                       id="phone" 
+                                       name="phone"
+                                       aria-describedby="phone-error phone-help"
+                                       autocomplete="tel">
+                                <span id="phone-help" class="help-text">Format: +358 123 456 789</span>
+                                <span class="error-message" id="phone-error" role="alert"></span>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>Your Message</legend>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject <span aria-label="required">*</span></label>
+                                <select id="subject" 
+                                        name="subject" 
+                                        required 
+                                        aria-required="true"
+                                        aria-describedby="subject-error">
+                                    <option value="">Select a subject</option>
+                                    <option value="project">Project Collaboration</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="question">General Question</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="subject-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message <span aria-label="required">*</span></label>
+                                <textarea id="message" 
+                                          name="message" 
+                                          rows="5" 
+                                          required 
+                                          aria-required="true"
+                                          aria-describedby="message-error message-help"></textarea>
+                                <span id="message-help" class="help-text">Please provide details about your inquiry</span>
+                                <span class="error-message" id="message-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" 
+                                           name="newsletter" 
+                                           value="yes">
+                                    Subscribe to my newsletter for AI/ML insights
+                                </label>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="form-group">
+                            <button type="submit">Send Message</button>
+                            <button type="reset">Clear Form</button>
+                        </div>
+                        
+                        <p class="help-text">
+                            <span aria-label="required">*</span> indicates required fields
+                        </p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="text-center">
+                <p>© 2024 Sawsan Abdulbari. All rights reserved.</p>
+                <p>
+                    <a href="accessibility.html">Accessibility Statement</a>
+                </p>
+                <p>
+                    <strong>Keyboard Shortcuts:</strong> 
+                    Alt+H (Home) | Alt+C (Contact) | Alt+A (Accessibility)
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/accessibility.js"></script>
+    <script>
+        // Skills filter functionality
+        document.getElementById('skills-filter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const checkedCategories = Array.from(document.querySelectorAll('input[name="skill-category"]:checked'))
+                .map(input => input.value);
+            
+            const allCards = document.querySelectorAll('[data-category]');
+            
+            allCards.forEach(card => {
+                if (checkedCategories.includes(card.dataset.category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Announce changes to screen readers
+            const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+            const announcement = `Showing ${visibleCount} skill categories`;
+            
+            // Create temporary live region for announcement
+            const liveRegion = document.createElement('div');
+            liveRegion.setAttribute('role', 'status');
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.className = 'visually-hidden';
+            liveRegion.textContent = announcement;
+            document.body.appendChild(liveRegion);
+            
+            setTimeout(() => liveRegion.remove(), 1000);
+        });
+        
+        // Reset form handler
+        document.querySelector('button[type="reset"]').addEventListener('click', function() {
+            setTimeout(() => {
+                document.querySelectorAll('[data-category]').forEach(card => {
+                    card.style.display = 'block';
+                });
+            }, 0);
+        });
+    </script>
+</body>
+</html>

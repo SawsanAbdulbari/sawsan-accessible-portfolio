@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessibility Statement for Sawsan Abdulbari's portfolio website">
+    <meta name="author" content="Sawsan Abdulbari">
+    
+    <title>Accessibility Statement - Sawsan Abdulbari Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills-projects.html">Skills & Projects</a></li>
+                    <li><a href="experience-education.html">Experience & Education</a></li>
+                    <li><a href="accessibility.html" aria-current="page">Accessibility Statement</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main id="main" role="main">
+        <div class="container">
+            <h1>Accessibility Statement</h1>
+            
+            <section aria-labelledby="commitment-heading">
+                <h2 id="commitment-heading">Our Commitment to Accessibility</h2>
+                
+                <p>
+                    Sawsan Abdulbari is committed to ensuring digital accessibility for people with disabilities. 
+                    I am continually improving the user experience for everyone and applying the relevant 
+                    accessibility standards to ensure my portfolio website is accessible to all users.
+                </p>
+                
+                <p>
+                    This website has been designed and developed with accessibility as a core principle, 
+                    following the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.
+                </p>
+            </section>
+            
+            <section aria-labelledby="standards-heading" class="mt-lg">
+                <h2 id="standards-heading">Conformance Status</h2>
+                
+                <p>
+                    The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and 
+                    developers to improve accessibility for people with disabilities. It defines three levels 
+                    of conformance: Level A, Level AA, and Level AAA. This website is fully conformant with 
+                    WCAG 2.1 level AA.
+                </p>
+            </section>
+            
+            <section aria-labelledby="features-heading" class="mt-lg">
+                <h2 id="features-heading">Accessibility Features</h2>
+                
+                <p>
+                    This website includes the following accessibility features to ensure all users can 
+                    access and navigate the content effectively:
+                </p>
+                
+                <h3>Navigation and Structure</h3>
+                <ul>
+                    <li>Clear and consistent navigation structure across all pages</li>
+                    <li>Skip to main content link on every page for keyboard users</li>
+                    <li>Properly nested heading hierarchy (H1-H6) for easy navigation</li>
+                    <li>Descriptive page titles that identify the page content and purpose</li>
+                    <li>Breadcrumb navigation where appropriate</li>
+                </ul>
+                
+                <h3>Keyboard Accessibility</h3>
+                <ul>
+                    <li>All interactive elements are keyboard accessible</li>
+                    <li>Visible focus indicators on all focusable elements</li>
+                    <li>Logical tab order throughout the website</li>
+                    <li>No keyboard traps - users can navigate in and out of all content</li>
+                    <li>Custom keyboard shortcuts: Alt+H (Home), Alt+C (Contact), Alt+A (Accessibility)</li>
+                </ul>
+                
+                <h3>Screen Reader Support</h3>
+                <ul>
+                    <li>Semantic HTML5 elements for proper structure</li>
+                    <li>ARIA landmarks for main page regions</li>
+                    <li>ARIA labels and descriptions where needed</li>
+                    <li>Form labels properly associated with form controls</li>
+                    <li>Error messages announced to screen readers</li>
+                    <li>Live regions for dynamic content updates</li>
+                </ul>
+                
+                <h3>Visual Design</h3>
+                <ul>
+                    <li>High contrast colors meeting WCAG AAA standards</li>
+                    <li>Text can be resized up to 200% without loss of functionality</li>
+                    <li>No reliance on color alone to convey information</li>
+                    <li>Consistent and predictable layout</li>
+                    <li>Support for dark mode based on user preferences</li>
+                </ul>
+                
+                <h3>Images and Media</h3>
+                <ul>
+                    <li>Alternative text for all informative images</li>
+                    <li>Captions and transcripts for video content</li>
+                    <li>Audio descriptions where appropriate</li>
+                    <li>Images of text avoided where possible</li>
+                </ul>
+                
+                <h3>Forms</h3>
+                <ul>
+                    <li>Clear labels for all form inputs</li>
+                    <li>Required fields clearly marked</li>
+                    <li>Helpful error messages and validation</li>
+                    <li>Fieldsets and legends to group related inputs</li>
+                    <li>Instructions and help text where needed</li>
+                </ul>
+                
+                <h3>Responsive Design</h3>
+                <ul>
+                    <li>Fully responsive layout that works on all devices</li>
+                    <li>Touch targets of at least 44x44 pixels</li>
+                    <li>Content reflows for different screen sizes</li>
+                    <li>No horizontal scrolling required</li>
+                </ul>
+                
+                <h3>Cognitive Accessibility</h3>
+                <ul>
+                    <li>Clear and simple language</li>
+                    <li>Consistent navigation and layout</li>
+                    <li>Important information highlighted appropriately</li>
+                    <li>No time limits on content</li>
+                    <li>Options to pause or stop moving content</li>
+                    <li>Clear instructions for interactive elements</li>
+                    <li>Predictable functionality - no unexpected changes</li>
+                </ul>
+                
+                <h3>Additional Features</h3>
+                <ul>
+                    <li>Respects user's motion preferences (reduced motion)</li>
+                    <li>Print-friendly styles for all content</li>
+                    <li>Progressive enhancement approach</li>
+                    <li>Works without JavaScript enabled</li>
+                </ul>
+            </section>
+            
+            <section aria-labelledby="technologies-heading" class="mt-lg">
+                <h2 id="technologies-heading">Technologies and Standards</h2>
+                
+                <p>This website is built using:</p>
+                <ul>
+                    <li>Semantic HTML5 for structure</li>
+                    <li>CSS3 with custom properties for theming</li>
+                    <li>Vanilla JavaScript for enhanced functionality</li>
+                    <li>ARIA (Accessible Rich Internet Applications) for complex interactions</li>
+                </ul>
+                
+                <p>The website follows these standards:</p>
+                <ul>
+                    <li>WCAG 2.1 Level AA compliance</li>
+                    <li>Section 508 compliance</li>
+                    <li>ARIA Authoring Practices Guide</li>
+                    <li>HTML5 validation</li>
+                </ul>
+            </section>
+            
+            <section aria-labelledby="testing-heading" class="mt-lg">
+                <h2 id="testing-heading">Testing and Evaluation</h2>
+                
+                <p>
+                    This website has been thoroughly tested for accessibility using a combination of 
+                    automated tools, manual testing, and assistive technology testing:
+                </p>
+                
+                <h3>Automated Testing Tools</h3>
+                <ul>
+                    <li>axe DevTools for comprehensive accessibility auditing</li>
+                    <li>WAVE (WebAIM's Web Accessibility Evaluation Tool)</li>
+                    <li>Lighthouse (Google Chrome DevTools)</li>
+                    <li>Pa11y command line tool for automated testing</li>
+                </ul>
+                
+                <h3>Manual Testing</h3>
+                <ul>
+                    <li>Keyboard-only navigation testing</li>
+                    <li>Screen reader testing with NVDA (Windows) and VoiceOver (macOS)</li>
+                    <li>Color contrast verification</li>
+                    <li>Text resize and zoom testing (up to 200%)</li>
+                    <li>Mobile device testing on various screen sizes</li>
+                </ul>
+                
+                <h3>Browser Compatibility</h3>
+                <p>The website has been tested and works in:</p>
+                <ul>
+                    <li>Chrome (latest version)</li>
+                    <li>Firefox (latest version)</li>
+                    <li>Safari (latest version)</li>
+                    <li>Edge (latest version)</li>
+                </ul>
+            </section>
+            
+            <section aria-labelledby="limitations-heading" class="mt-lg">
+                <h2 id="limitations-heading">Known Limitations</h2>
+                
+                <p>
+                    While we strive for complete accessibility, some areas may have limitations:
+                </p>
+                
+                <ul>
+                    <li>
+                        Some older PDF documents linked from the site may not be fully accessible. 
+                        We are working to update these or provide accessible alternatives.
+                    </li>
+                    <li>
+                        Third-party embedded content (such as social media widgets) may not meet 
+                        the same accessibility standards as the rest of the site.
+                    </li>
+                </ul>
+            </section>
+            
+            <section aria-labelledby="feedback-heading" class="mt-lg">
+                <h2 id="feedback-heading">Feedback and Contact</h2>
+                
+                <p>
+                    I welcome your feedback on the accessibility of this website. If you encounter 
+                    accessibility barriers or have suggestions for improvement, please contact me:
+                </p>
+                
+                <div class="card">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:sawsan.abdulbari@example.com">sawsan.abdulbari@example.com</a></li>
+                        <li><strong>Contact Form:</strong> <a href="skills-projects.html#contact-form">Use the contact form</a></li>
+                        <li><strong>Response Time:</strong> Within 2 business days</li>
+                    </ul>
+                    
+                    <p>
+                        When contacting us about accessibility, please include:
+                    </p>
+                    <ul>
+                        <li>The web page URL where you encountered the issue</li>
+                        <li>A description of the problem</li>
+                        <li>The assistive technology you were using (if applicable)</li>
+                        <li>Your contact information for follow-up</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section aria-labelledby="updates-heading" class="mt-lg">
+                <h2 id="updates-heading">Updates to This Statement</h2>
+                
+                <p>
+                    This accessibility statement was last updated on <time datetime="2024-01-15">January 15, 2024</time>. 
+                    We regularly review and update this statement to reflect any changes in our accessibility 
+                    practices or website functionality.
+                </p>
+            </section>
+            
+            <section aria-labelledby="legal-heading" class="mt-lg">
+                <h2 id="legal-heading">Legal and Regulatory Compliance</h2>
+                
+                <p>
+                    This website complies with applicable accessibility laws and regulations, including:
+                </p>
+                
+                <ul>
+                    <li>European Accessibility Act (EAA)</li>
+                    <li>EN 301 549 standard</li>
+                    <li>Section 508 of the Rehabilitation Act</li>
+                    <li>Americans with Disabilities Act (ADA)</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="text-center">
+                <p>© 2024 Sawsan Abdulbari. All rights reserved.</p>
+                <p>
+                    <a href="accessibility.html" aria-current="page">Accessibility Statement</a>
+                </p>
+                <p>
+                    <strong>Keyboard Shortcuts:</strong> 
+                    Alt+H (Home) | Alt+C (Contact) | Alt+A (Accessibility)
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/accessibility.js"></script>
+</body>
+</html>

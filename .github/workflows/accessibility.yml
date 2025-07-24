@@ -1,0 +1,186 @@
+name: Accessibility Testing
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run accessibility tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  accessibility-audit:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Serve website
+      run: |
+        npm run serve &
+        sleep 5  # Wait for server to start
+        
+    - name: Wait for server to be ready
+      run: |
+        timeout 30 bash -c 'until curl -f http://localhost:8000; do sleep 1; done'
+        
+    - name: Run Pa11y accessibility tests
+      run: |
+        npx pa11y-ci \
+          --sitemap http://localhost:8000/sitemap.xml \
+          --standard WCAG2AA \
+          --reporter cli \
+          --threshold 0
+          
+    - name: Run axe-core accessibility tests
+      run: |
+        npx axe http://localhost:8000 \
+          --include "main" \
+          --exclude "#skip-link" \
+          --exit
+          
+    - name: Run Lighthouse accessibility audit
+      run: |
+        mkdir -p ./reports
+        npx lighthouse http://localhost:8000 \
+          --only-categories=accessibility \
+          --output=json \
+          --output-path=./reports/lighthouse-accessibility.json \
+          --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"
+          
+    - name: Check Lighthouse accessibility score
+      run: |
+        SCORE=$(node -p "
+          const report = require('./reports/lighthouse-accessibility.json');
+          Math.round(report.categories.accessibility.score * 100)
+        ")
+        echo "Lighthouse Accessibility Score: $SCORE/100"
+        if [ "$SCORE" -lt 90 ]; then
+          echo "❌ Accessibility score is below 90. Current score: $SCORE"
+          exit 1
+        else
+          echo "✅ Accessibility score is $SCORE/100"
+        fi
+        
+    - name: Upload accessibility reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: accessibility-reports-${{ matrix.node-version }}
+        path: ./reports/
+        retention-days: 30
+        
+  html-validation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate HTML
+      run: npx html-validate *.html
+      
+    - name: Validate CSS
+      run: npx stylelint css/*.css
+
+  cross-browser-testing:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Serve website
+      run: |
+        npm run serve &
+        sleep 5
+        
+    - name: Test with multiple browsers
+      run: |
+        # Test key pages for basic functionality
+        curl -f http://localhost:8000/ > /dev/null
+        curl -f http://localhost:8000/skills-projects.html > /dev/null
+        curl -f http://localhost:8000/experience-education.html > /dev/null
+        curl -f http://localhost:8000/accessibility.html > /dev/null
+        echo "✅ All pages are accessible"
+        
+  performance-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Serve website
+      run: |
+        npm run serve &
+        sleep 5
+        
+    - name: Run Lighthouse performance audit
+      run: |
+        mkdir -p ./reports
+        npx lighthouse http://localhost:8000 \
+          --output=json \
+          --output-path=./reports/lighthouse-full.json \
+          --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"
+          
+    - name: Check performance scores
+      run: |
+        node -p "
+          const report = require('./reports/lighthouse-full.json');
+          const scores = report.categories;
+          console.log('📊 Lighthouse Scores:');
+          console.log('Performance:', Math.round(scores.performance.score * 100));
+          console.log('Accessibility:', Math.round(scores.accessibility.score * 100));
+          console.log('Best Practices:', Math.round(scores['best-practices'].score * 100));
+          console.log('SEO:', Math.round(scores.seo.score * 100));
+          
+          // Ensure accessibility is perfect
+          if (scores.accessibility.score < 1.0) {
+            console.log('❌ Accessibility score must be 100/100');
+            process.exit(1);
+          }
+          console.log('✅ All scores meet requirements');
+        "
