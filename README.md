@@ -167,7 +167,7 @@ function announceToScreenReader(message) {
 ### **Local Development**
 ```bash
 # Clone the repository
-git clone [repository-url]
+git clone https://github.com/SawsanAbdulbari/sawsan-accessible-portfolio
 cd sawsan-accessible-portfolio
 
 # Serve locally (Python 3)
