@@ -220,55 +220,7 @@ python -m http.server 8000
 - ✅ **200% Zoom**: Full functionality maintained
 
 ## 🎥 Video Demonstration
-
-A comprehensive 10-minute video demonstration covers:
-
-1. **Screen Reader Testing** with Windows Narrator
-2. **Keyboard Navigation** demonstration
-3. **Accessibility Tools** results (100% scores)
-4. **Responsive Design** across devices
-5. **200% Zoom** functionality
-6. **Form Validation** accessibility
-7. **ARIA Implementation** examples
-
-*See `UPDATED_VIDEO_SCRIPT.md` for complete script*
-
-## 🔧 Issue Resolution
-
-### **Major Accessibility Fixes Applied**
-
-**Problem**: Progress bars missing accessible names
-```html
-<!-- ❌ Before (Inaccessible) -->
-<div role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-  95%
-</div>
-
-<!-- ✅ After (Accessible) -->
-<div role="progressbar" 
-     aria-label="Python & Data Science proficiency: 95 percent"
-     aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-  95%
-</div>
-```
-
-**Impact**: All 5 progress bars now have descriptive labels for screen readers
-
-*See `ACCESSIBILITY_FIXES.md` for detailed documentation*
-
-## ⚠️ Console Errors Explanation
-
-You may see font loading errors in the browser console:
-```
-Failed to decode downloaded font: chrome-extension://...
-OTS parsing error: incorrect file size in WOFF header
-```
-
-**These errors are caused by browser extensions, NOT this website:**
-- Notice the `chrome-extension://` URLs
-- These are external to our project code
-- They don't affect the website's functionality or accessibility scores
-- To resolve: disable/update browser extensions
+- Visit [Demo video](https://hameenamk-my.sharepoint.com/:v:/g/personal/sawsan23000_student_hamk_fi/EfclwUYVQtlMgf1N-vkEBTwB9DW5Qker8dzSw4rh_wHakA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ADTmw4)
 
 ## 🏆 WCAG 2.1 Compliance
 
